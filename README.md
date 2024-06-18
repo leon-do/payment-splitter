@@ -1,4 +1,4 @@
-# Payment Spliter Vault Token
+# Payment Splitter Vault Token
 
 Modification of [https://docs.openzeppelin.com/contracts/2.x/api/payment](https://docs.openzeppelin.com/contracts/4.x/api/finance#PaymentSplitter)
 
