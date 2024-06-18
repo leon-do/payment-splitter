@@ -9,3 +9,40 @@ The split can be in equal parts or in any other arbitrary proportion. The way th
 PaymentSplitter follows a pull payment model. This means that payments are not automatically forwarded to the accounts but kept in this contract, and the actual transfer is triggered as a separate step by calling the release function.
 
 ![Screenshot 2024-06-17 at 10 45 26 PM](https://github.com/leon-do/payment-spliter/assets/19412160/bb574b6b-a386-4bed-8b45-4bc79970e49a)
+
+
+## Install
+
+```shell
+forge install --no-commit --shallow OpenZeppelin/openzeppelin-contracts
+```
+
+## Documentation
+
+https://book.getfoundry.sh/
+
+## Usage
+
+### Format
+
+```shell
+$ forge fmt
+```
+
+### Build
+
+```shell
+$ forge build
+```
+
+### Test
+
+```shell
+$ forge test --watch --run-all
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```

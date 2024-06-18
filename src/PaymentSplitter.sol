@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
@@ -34,11 +34,11 @@ contract PaymentSplitter {
     mapping(IERC20 => mapping(address => uint256)) private _erc20Released;
 
     /**
-     * @dev Creates an instance of `PaymentSplitter` where 
+     * @dev Creates an instance of `PaymentSplitter` where
      * the assigned the number of shares is calculted by number of vaultTokens owned
      */
     constructor(IERC20 vaultToken) payable {
-       _vaultToken = vaultToken;
+        _vaultToken = vaultToken;
     }
 
     /**
@@ -152,12 +152,11 @@ contract PaymentSplitter {
      * @dev internal logic for computing the pending payment of an `account` given the token historical balances and
      * already released amounts.
      */
-    function _pendingPayment(
-        address account,
-        uint256 totalReceived,
-        uint256 alreadyReleased
-    ) private view returns (uint256) {
+    function _pendingPayment(address account, uint256 totalReceived, uint256 alreadyReleased)
+        private
+        view
+        returns (uint256)
+    {
         return (totalReceived * shares(account)) / totalShares() - alreadyReleased;
     }
-
 }
