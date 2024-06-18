@@ -56,7 +56,7 @@ contract VTokenTest is Test {
         assertEq(zToken.balanceOf(address(paymentSplitter)), 0);
     }
 
-     function test_ReleaseC() public {
+    function test_ReleaseC() public {
         // transfer 50% v to random user 1
         vToken.transfer(address(1), 50);
         // transfer z to payment splitter
