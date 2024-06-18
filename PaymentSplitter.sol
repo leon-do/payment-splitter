@@ -1,6 +1,4 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v4.8.0) (finance/PaymentSplitter.sol)
-
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -32,16 +30,12 @@ contract PaymentSplitter {
     uint256 private _totalReleased;
 
     mapping(address => uint256) private _released;
-    address[] private _payees;
-
     mapping(IERC20 => uint256) private _erc20TotalReleased;
     mapping(IERC20 => mapping(address => uint256)) private _erc20Released;
 
     /**
-     * @dev Creates an instance of `PaymentSplitter` where each account in `payees` is assigned the number of shares at
-     * the matching position in the `shares` array.
-     *
-     * Shares are termined by the balanceOf the vault tokens
+     * @dev Creates an instance of `PaymentSplitter` where 
+     * the assigned the number of shares is calculted by number of vaultTokens owned
      */
     constructor(IERC20 vaultToken) payable {
        _vaultToken = vaultToken;
@@ -89,13 +83,6 @@ contract PaymentSplitter {
      */
     function released(IERC20 token, address account) public view returns (uint256) {
         return _erc20Released[token][account];
-    }
-
-    /**
-     * @dev Getter for the address of the payee number `index`.
-     */
-    function payee(uint256 index) public view returns (address) {
-        return _payees[index];
     }
 
     /**
