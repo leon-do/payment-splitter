@@ -26,23 +26,25 @@ https://book.getfoundry.sh/
 ### Format
 
 ```shell
-$ forge fmt
+forge fmt
 ```
 
 ### Build
 
 ```shell
-$ forge build
+forge build
 ```
 
 ### Test
 
 ```shell
-$ forge test --watch --run-all
+forge test --watch --run-all
 ```
 
 ### Deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+forge script script/Deploy.s.sol:DeployScript \
+    --rpc-url $RPC_URL \
+    --broadcast --verify -vvvv
 ```

@@ -18,6 +18,7 @@ contract VTokenTest is Test {
     }
 
     function test_InitialState() public view {
+        assertEq(paymentSplitter.token(), address(vToken));
         assertEq(vToken.balanceOf(address(this)), 100);
         assertEq(zToken.balanceOf(address(this)), 100);
         assertEq(zToken.balanceOf(address(paymentSplitter)), 0);

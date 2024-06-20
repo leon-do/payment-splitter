@@ -42,6 +42,13 @@ contract PaymentSplitter {
     }
 
     /**
+     * @dev Getter for the vault token address
+     */
+    function tokenAddress() public view returns (address) {
+        return address(_vaultToken);
+    }
+
+    /**
      * @dev Getter for the total shares held by payees.
      */
     function totalShares() public view returns (uint256) {
