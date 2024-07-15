@@ -8,6 +8,15 @@ The split can be in equal parts or in any other arbitrary proportion. The way th
 
 PaymentSplitter follows a pull payment model. This means that payments are not automatically forwarded to the accounts but kept in this contract, and the actual transfer is triggered as a separate step by calling the release function.
 
+For example
+- Alice owns 50% of vaultToken (vTKN)
+- Vault has 20 ETH
+- Vault has 40 TKNA
+- Vault has 60 TKNB
+- Alice can withdraw 10 ETH
+- Alice can withdraw 20 TKNA
+- Alice can withdraw 30 TKNB
+
 ![Screenshot 2024-06-17 at 10 45 26 PM](https://github.com/leon-do/payment-spliter/assets/19412160/bb574b6b-a386-4bed-8b45-4bc79970e49a)
 
 
